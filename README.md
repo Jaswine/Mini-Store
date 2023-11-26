@@ -12,4 +12,6 @@
 
   ![изображение](https://github.com/Jaswine/Mini-Store/assets/82625479/fd97baae-806a-4f19-919a-d91797ac024b)
 
-- 
+- Product List
+
+  ![изображение](https://github.com/Jaswine/Mini-Store/assets/82625479/d71e900e-f465-472b-b197-19079a5eada0)
