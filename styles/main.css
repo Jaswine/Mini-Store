@@ -74,7 +74,7 @@ a:active {
     color: rgb(20,20,20,.45);
     margin-bottom: 2px;
 }
-.form__field input {
+input, textarea {
     width: 100%;
     background-color: transparent;
     border: 2px solid rgb(20,20,20,.35);
@@ -86,12 +86,22 @@ a:active {
     outline: none;
     transition: all .3s linear;
 }
-.form__field input:hover {
+textarea {
+    min-height: 120px;
+}
+input:hover, textarea:hover {
     border-color: var(--red);
 }
 .form__field input:focus {
     border-color: var(--red);
     outline: 1px solid var(--red);
+}
+.form__line {
+    display: grid;
+    grid-template-columns: 25% 65%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 .btn {
     background-color: #202020;
@@ -114,19 +124,26 @@ header {
     justify-content: flex-end;
     align-items: center;
     height: 60px;
-    background-color: var(--primary);
+    /* background-color: var(--primary); */
     color: var(--lightgray);
-    padding: 0 5vw;
+    padding: 10px;
+    margin-top: 10px;
 }
-header div {
+.header__item {
+    border: 2px solid var(--primary);
+    padding: 10px 5vw;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 0 0 10px 10px rgb(20,20,20,.1);
+}
+.header__item div {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-}
-header div a {
-    color: var(--white);
-    padding: 8px 8px;
+    gap: 20px;
 }
 header div a:hover {
     border-bottom: 2px solid var(--red);

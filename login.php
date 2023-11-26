@@ -13,19 +13,22 @@
                     $email = $_POST['Email'];
                     $password = $_POST['Password'];
 
-                    $sql = "SELECT ID, Username, Email FROM Users WHERE Email='$email' AND Password='$password'";
+                    $sql = "SELECT id, username, email FROM Users WHERE email='$email' AND password='$password'";
                     $is_user_exist = mysqli_query($conn, $sql);
 
-                    try {
-                        if (mysqli_num_rows($is_user_exist) > 0) {
-                            echo $is_user_exist['ID'];
-                            echo $is_user_exist['Username'];
-                        } else {
-                            echo "<p style='background-color: #DD1323; color: white; padding: 10px; border-radius: 8px; width:100%; text-align:center' >Email or Password is incorrect!</p>";
-                        }
-                    } catch (\Throwable $th) {
-                        echo $th;
+                    if (mysqli_num_rows($is_user_exist) > 0) {
+                        $userData = $is_user_exist->fetch_assoc();
+
+                        setcookie("UserUsername", $userData['username'], time() + (86400 * 30));
+                        setcookie("UserID", $userData['id'], time() + (86400 * 30));
+                        setcookie("UserEmail", $userData['email'], time() + (86400 * 30));
+
+                        header("Location: /dashboard.php");
+                        exit();
+                    } else {
+                        echo "<p style='background-color: #DD1323; color: white; padding: 10px; border-radius: 8px; width:100%; text-align:center' >Email or Password is incorrect!</p>";
                     }
+                    
                 }
             ?>
 
