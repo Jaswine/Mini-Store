@@ -7,16 +7,13 @@
 <div class="page">
     <div class='page__item'>
     <?php
-        $userId = $_GET['username'];
-
-        $sql = "SELECT * FROM User WHERE id='$userId'";
+        $userUsername = $_GET['username'];
+        $sql = "SELECT * FROM Users WHERE username='$userUsername'";
         $result = $conn->query($sql);
+        $user = $result->fetch_assoc();
         
+        echo "<div class='page__item__right'><h1>$user[username]</h1><h3>$user[email]</h3></div>";
         ?>
-
-        <div class="page__item__right">
-            
-        </div>
    </div>
 </div>
 
