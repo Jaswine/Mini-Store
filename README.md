@@ -1,5 +1,7 @@
 # Mini-Store
 
+<a href='https://www.figma.com/community/file/1310833612082667013'>DB&Pages schemas</a>
+
 - Login
 
 ![изображение](https://github.com/Jaswine/Mini-Store/assets/82625479/3fafec82-b917-4756-8be7-c2eb41e958b1)
